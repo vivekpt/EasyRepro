@@ -136,7 +136,7 @@ namespace Microsoft.Dynamics365.UIAutomation.Api
                     }
 
                     driver.WaitUntilVisible(By.XPath(Elements.Xpath[Reference.Login.CrmMainPage])
-                        , new TimeSpan(0, 0, 60),
+                        , new TimeSpan(0, 0, 200),
                         e => 
                         {
                             e.WaitForPageToLoad();

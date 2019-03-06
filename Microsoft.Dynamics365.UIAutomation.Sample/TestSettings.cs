@@ -15,11 +15,11 @@ namespace Microsoft.Dynamics365.UIAutomation.Sample
 
         public static BrowserOptions Options = new BrowserOptions
                                                 {
-            BrowserType = (BrowserType)Enum.Parse(typeof(BrowserType), Type),
+            BrowserType = BrowserType.Chrome,
             PrivateMode = true,
             FireEvents = false,
             Headless = false,
-            UserAgent = false
+            UserAgent = false,           
                                                 };
     }
 }

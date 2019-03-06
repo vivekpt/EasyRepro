@@ -50,10 +50,10 @@ namespace Microsoft.Dynamics365.UIAutomation.Sample.SharedAPI
                     xrmBrowser.ThinkTime(2000);
                     Dictionary<string, PerformanceMarker> perfResults = perf.GetMarkers().Value;
 
-                    new Telemetry(System.Configuration.ConfigurationManager.AppSettings["AzureKey"], executionId, perf.GetRequestId())
+                    new Telemetry("d3ee4648-8070-4c08-8a35-02dd7189d12a", executionId, perf.GetRequestId())
                         .TrackEvents(perfResults.Select((KeyValuePair<string, PerformanceMarker> x) => x.Value).ToList());
                 }
-                new Telemetry(System.Configuration.ConfigurationManager.AppSettings["AzureKey"], executionId)
+                new Telemetry("43ba271b-6689-481e-b91f-a4a5c36a7924", executionId)
                     .TrackEvents(xrmBrowser.CommandResults);
             }
         }

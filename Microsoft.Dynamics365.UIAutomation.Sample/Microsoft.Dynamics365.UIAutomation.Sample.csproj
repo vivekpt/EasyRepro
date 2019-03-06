@@ -87,6 +87,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
+    <Compile Include="Demo\CreateContact.cs" />
+    <Compile Include="Demo\ValidatePhone.cs" />
+    <Compile Include="Demo\CreateAccount.cs" />
     <Compile Include="SharedAPI\AzureInsights\OpenLead.cs" />
     <Compile Include="SharedAPI\BrowserTests\BrowserTests.cs" />
     <Compile Include="UCI\BusinessProcessFlow\BusinessProcessFlowNextStage.cs" />
