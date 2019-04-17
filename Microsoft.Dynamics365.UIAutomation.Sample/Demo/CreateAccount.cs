@@ -6,6 +6,7 @@ using Microsoft.Dynamics365.UIAutomation.Api;
 using Microsoft.Dynamics365.UIAutomation.Browser;
 using System;
 using System.Security;
+using OpenQA.Selenium;
 
 namespace Microsoft.Dynamics365.UIAutomation.Sample
 {
@@ -38,17 +39,17 @@ namespace Microsoft.Dynamics365.UIAutomation.Sample
                 xrmBrowser.Entity.SetValue(new OptionSet() { Name = "customertypecode", Value = "Customer" });
 
                 xrmBrowser.Entity.Save();
-
-                xrmBrowser.Entity.ope
-
+                
                 xrmBrowser.Dialogs.DuplicateDetection(true);
-
-               
 
                 xrmBrowser.ActivityFeed.AddPost("Added new Account for Customer Demo");
                
                 //Validate Phone Number format
                 var phoneNumber = xrmBrowser.Entity.GetValue("telephone1").Value;
+
+                var phoneLabel = xrmBrowser.Driver.FindElement(By.Id("telephone1_cl")).Text;
+
+                Assert.AreEqual("Phone", phoneLabel);
 
                 Assert.AreEqual("(555) 555-5555", phoneNumber);
 
